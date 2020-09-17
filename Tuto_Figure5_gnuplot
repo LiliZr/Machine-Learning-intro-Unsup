@@ -1,0 +1,23 @@
+Pour dessiner une gaussienne à l'aide de Gnuplot et un fichier qui contient les valeurs des données (Les xi) : 
+
+/!\ Pour acceder à un dossier sur windows => passer par la racine : 
+ cd 'F:\Cours\CoursL2\S3\Java\Automatique\ReseauDeNeurones\resultatsMixGauss\Q5_Points1D'                    
+
+**Ici Pour générer le schéma de la question Q5  du projet (Histogramme + gaussiennes): 
+(Histogramme les données x et fx sont dans le fichier 'histo.d' /!\ Attention : il doit avoir un format précis (x; y) (à vérifier) /!\)
+
+1) Déclarer les constantes obtenues par le programme dans gnuplot : 
+-Un des exemples obtenu : 
+ m0=2.978792917467918
+ v0=1.505326125115297 
+ gho0=0.5015734577666175
+ 
+ m1=-2.011321369915423  
+ gho1=0.49842654223338245 
+ v1=0.2008115004412633
+ 
+ 2) On déclare la fonction Gauss :
+ Gauss(x,mu,sigma) = 1./(sqrt(2*pi*sigma)) * exp( -(x-mu)**2 / (2*sigma) )  
+ 
+ 3) On lance le plot : 
+ plot (Gauss(x,m0,v0)*gho0)+(Gauss(x,m1,v1)*gho1), "histo.d" with boxes
